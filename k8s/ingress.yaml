@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: python-app-2
+spec:
+  rules:
+  - host: "python-app-2.dev.platform-engineering.test"
+    http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: python-app-2
+              port:
+                number: 8080
